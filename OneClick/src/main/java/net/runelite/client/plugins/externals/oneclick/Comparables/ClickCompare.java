@@ -103,11 +103,11 @@ public abstract class ClickCompare
 			return Pair.of(-1, -1);
 		}
 		final Widget inventoryWidget = client.getWidget(WidgetInfo.INVENTORY);
-		final List<WidgetItem> itemList = (List<WidgetItem>) inventoryWidget.getWidgetItems();
+		final List<Widget> itemList = (List<Widget>) inventoryWidget.getChildren();
 
 		for (int i = itemList.size() - 1; i >= 0; i--)
 		{
-			final WidgetItem item = itemList.get(i);
+			final Widget item = itemList.get(i);
 			if (item.getId() == id)
 			{
 				return Pair.of(item.getId(), item.getIndex());
@@ -125,11 +125,11 @@ public abstract class ClickCompare
 		}
 
 		final Widget inventoryWidget = client.getWidget(WidgetInfo.INVENTORY);
-		final List<WidgetItem> itemList = (List<WidgetItem>) inventoryWidget.getWidgetItems();
+		final List<Widget> itemList = (List<Widget>) inventoryWidget.getChildren();
 
 		for (int i = itemList.size() - 1; i >= 0; i--)
 		{
-			final WidgetItem item = itemList.get(i);
+			final Widget item = itemList.get(i);
 			if (ids.contains(item.getId()))
 			{
 				return Pair.of(item.getId(), item.getIndex());
